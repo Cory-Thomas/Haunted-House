@@ -196,15 +196,16 @@ const graves = new THREE.Group();
 scene.add(graves);
 
 const graveGeometry = new THREE.BoxGeometry(0.6, 0.8, 0.2);
-const graveMaterial = new THREE.MeshStandardMaterial({
-  roughness: 0.6,
-  metalness: 0,
-  map: graveColorTexture,
-  transparent: true,
-  aoMap: graveAmbientOcclusionTexture,
-  normalMap: graveNormalTexture,
-  //   roughnessMap: graveRoughnessTexture,
-});
+// const graveMaterial = new THREE.MeshStandardMaterial({
+//   roughness: 0.6,
+//   metalness: 0,
+//   map: graveColorTexture,
+//   transparent: true,
+//   aoMap: graveAmbientOcclusionTexture,
+//   normalMap: graveNormalTexture,
+//   //   roughnessMap: graveRoughnessTexture,
+// });
+const graveMaterial = new THREE.MeshStandardMaterial({ color: '#b2b6b1' });
 
 for (let i = 0; i < 50; i++) {
   const angle = Math.random() * Math.PI * 2;
@@ -233,7 +234,6 @@ gltfLoader.load('/textures/ghost.glb', (gltf) => {
   gltf.scene.scale.set(0.1, 0.1, 0.1);
   gltf.scene.position.set(0, 1, 0);
   scene.add(gltf.scene);
-  console.log(gltf.scene.children);
 });
 
 /**
